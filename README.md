@@ -29,10 +29,12 @@ Welcome to my personal portfolio repository! This responsive, dynamic website sh
 
 ### 🎓 Student Clearance Management System
 A comprehensive web-based system developed to automate the student clearance process at Debre Berhan University. It synchronizes multiple departments, allowing seamless review, approval, and rejection of student clearance requests.
+- **Technologies:** Node.js with Express, PostgreSQL, React, Tailwind CSS
 - **Live Link:** [dbu-clearance-system.onrender.com](https://dbu-clearance-system.onrender.com)
 
 ### 🍔 Online Food Delivery Platform
 A dynamic full-stack web application designed for interactive food ordering. Features include a user-friendly menu, cart processing, and a dedicated administrative panel to manage restaurant offerings and customer orders efficiently.
+- **Technologies:** PHP, MySQL, HTML, CSS, JavaScript
 - **Live Link:** [awoke.infy.uk/food-order](http://awoke.infy.uk/food-order/index.php)
 
 ## 🛠️ Built With
