@@ -3,7 +3,7 @@
 Welcome to my personal portfolio repository! This responsive, dynamic website showcases my skills, experience, and projects as a Full-Stack Developer and UI/UX Designer. It is built using modern web development practices with a strong focus on aesthetics and performance.
 
 ## 🌟 Live Demo
-[View Live Site](https://awoked.netlify.app/)
+[View Live Site](https://awoked-portfolio.netlify.app/)
 
 ## ✨ Features
 - **Modern UI/UX Design**: Built with a stunning dark/indigo gradient color palette, frosted glassmorphism elements, and smooth modern typography (`Poppins`).
