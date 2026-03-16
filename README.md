@@ -15,8 +15,8 @@ Welcome to my personal portfolio repository! This responsive, dynamic website sh
 
 ## 📷 Screenshots
 
-![Hero Section](images/myprofile.jpg) 
-*(Note: Update the image path above with proper desktop/mobile screenshots of the site)*
+![Desktop Portfolio View](images/desktop-view.png) 
+![Mobile Portfolio View](images/mobile-view.png)
 
 ## 💡 Skills
 
