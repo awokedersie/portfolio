@@ -125,7 +125,7 @@ document.getElementById('sendEmailBtn').addEventListener('click', function(e) {
   const subject = encodeURIComponent(document.getElementById('emailSubject').value);
   const message = encodeURIComponent(document.getElementById('userMessage').value);
   
-  const mailtoLink = `mailto:tomasderese49@gmail.com?subject=${subject}&body=Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
+  const mailtoLink = `mailto:awokedersie@gmail.com?subject=${subject}&body=Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
   
   window.location.href = mailtoLink;
 });
