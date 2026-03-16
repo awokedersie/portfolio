@@ -13,6 +13,28 @@ Welcome to my personal portfolio repository! This responsive, dynamic website sh
 - **Projects Showcase**: Interactive project cards showcasing live previews of my work (e.g., student clearance systems, dynamic e-commerce solutions).
 - **Direct Contact**: Easily accessible email functionality for seamless communication.
 
+## 📷 Screenshots
+
+![Hero Section](images/myprofile.jpg) 
+*(Note: Update the image path above with proper desktop/mobile screenshots of the site)*
+
+## 💡 Skills
+
+- **Frontend:** HTML, CSS, JavaScript, React
+- **Backend:** Node.js, Express, PHP
+- **Database:** MySQL
+- **Tools:** Git, GitHub, Figma
+
+## 📂 Featured Projects
+
+### 🎓 Student Clearance Management System
+A comprehensive web-based system developed to automate the student clearance process at Debre Berhan University. It synchronizes multiple departments, allowing seamless review, approval, and rejection of student clearance requests.
+- **Live Link:** [dbu-clearance-system.onrender.com](https://dbu-clearance-system.onrender.com)
+
+### 🍔 Online Food Delivery Platform
+A dynamic full-stack web application designed for interactive food ordering. Features include a user-friendly menu, cart processing, and a dedicated administrative panel to manage restaurant offerings and customer orders efficiently.
+- **Live Link:** [awoke.infy.uk/food-order](http://awoke.infy.uk/food-order/index.php)
+
 ## 🛠️ Built With
 - **HTML5** (semantic structure)
 - **CSS3** (custom properties, Flexbox, Grid, advanced animations)
