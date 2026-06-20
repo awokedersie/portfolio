@@ -3,706 +3,756 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Awoke Derssie — CV / Resume</title>
-  <meta name="description" content="Curriculum Vitae of Awoke Derssie — Full-Stack Developer & UI/UX Designer from Debre Berhan, Ethiopia." />
+  <title>Awoke Derssie — Curriculum Vitae</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="icon" href="images/Awoke derssie.png" type="image/png">
   <style>
-    /* ============================================================
-       PRINT & SCREEN SHARED BASE
-    ============================================================ */
+
+    /* ── SCREEN SHELL ─────────────────────────────────── */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --primary: #4f46e5;
-      --primary-dark: #3730a3;
-      --accent: #ec4899;
-      --gradient: linear-gradient(135deg, #4f46e5, #ec4899);
-      --text: #1e293b;
-      --text-light: #64748b;
-      --border: #e2e8f0;
-      --bg: #f8fafc;
-      --white: #ffffff;
-      --sidebar-bg: #0f172a;
-    }
-
     body {
-      font-family: "Poppins", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      font-family: "Inter", sans-serif;
+      background: #e8edf2;
       min-height: 100vh;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    /* ============================================================
-       SCREEN TOOLBAR
-    ============================================================ */
-    .toolbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 32px;
-    }
-
-    .toolbar-brand {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .toolbar-brand span { background: var(--gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-
-    .toolbar-actions { display: flex; gap: 12px; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 22px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-family: inherit;
-      font-size: 0.88rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: var(--gradient);
-      color: #fff;
-      box-shadow: 0 4px 14px rgba(79,70,229,0.3);
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(79,70,229,0.45); }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-    .btn-outline:hover { background: var(--primary); color: #fff; transform: translateY(-2px); }
-
-    /* ============================================================
-       CV WRAPPER (screen)
-    ============================================================ */
-    .cv-wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 100px 24px 60px;
-    }
-
-    /* ============================================================
-       CV CARD
-    ============================================================ */
-    .cv {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      min-height: 1100px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 16px 60px rgba(0,0,0,0.1);
-    }
-
-    /* ============================================================
-       SIDEBAR
-    ============================================================ */
-    .cv-sidebar {
-      background: var(--sidebar-bg);
-      color: #fff;
-      padding: 40px 28px;
       display: flex;
       flex-direction: column;
-      gap: 36px;
     }
 
-    /* Profile */
-    .profile-photo {
-      text-align: center;
-    }
-    .profile-photo img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--primary);
-      box-shadow: 0 0 0 6px rgba(79,70,229,0.2);
-      display: block;
-      margin: 0 auto 16px;
-    }
-    .profile-photo h1 {
-      font-size: 1.25rem;
-      font-weight: 800;
-      line-height: 1.3;
-      color: #fff;
-    }
-    .profile-photo .job-title {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: #94a3b8;
-      margin-top: 4px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    /* Sidebar section titles */
-    .sidebar-section h3 {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--primary);
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(79,70,229,0.3);
-    }
-
-    /* Contact */
-    .contact-item {
+    /* ── TOP TOOLBAR (screen only) ────────────────────── */
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: #1e2a3a;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .toolbar-brand {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+    .toolbar-brand strong { color: #fff; }
+    .toolbar-actions { display: flex; gap: 10px; align-items: center; }
+
+    .t-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .t-btn-ghost {
+      background: rgba(255,255,255,0.07);
+      color: #94a3b8;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .t-btn-ghost:hover { background: rgba(255,255,255,0.13); color: #fff; }
+
+    .t-btn-download {
+      background: #2563eb;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(37,99,235,0.4);
+    }
+    .t-btn-download:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .t-btn-download.loading { opacity: 0.7; cursor: not-allowed; }
+
+    .progress-bar-wrap {
+      display: none;
+      align-items: center;
       gap: 10px;
-      margin-bottom: 12px;
+      color: #94a3b8;
       font-size: 0.82rem;
     }
-    .contact-item i {
-      color: var(--primary);
-      width: 16px;
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-    .contact-item a, .contact-item span {
-      color: #cbd5e1;
-      word-break: break-all;
-    }
-    .contact-item a:hover { color: #fff; }
-
-    /* Skills */
-    .skill-bar-item { margin-bottom: 12px; }
-    .skill-bar-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: #cbd5e1;
-      margin-bottom: 5px;
-    }
-    .skill-bar-track {
-      height: 5px;
+    .progress-bar-wrap.show { display: flex; }
+    .progress-track {
+      width: 120px;
+      height: 6px;
       background: rgba(255,255,255,0.1);
       border-radius: 10px;
       overflow: hidden;
     }
-    .skill-bar-fill {
+    .progress-fill {
       height: 100%;
-      background: var(--gradient);
+      background: #2563eb;
       border-radius: 10px;
+      width: 0%;
+      transition: width 0.3s ease;
     }
 
-    /* Languages */
-    .lang-item {
+    /* ── PAGE CONTAINER ───────────────────────────────── */
+    .page-wrap {
+      flex: 1;
       display: flex;
-      justify-content: space-between;
-      font-size: 0.82rem;
-      color: #cbd5e1;
-      margin-bottom: 8px;
-    }
-    .lang-level {
-      display: flex;
-      gap: 4px;
-    }
-    .lang-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-    }
-    .lang-dot.filled { background: var(--primary); }
-
-    /* Interests */
-    .interests-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .interest-tag {
-      background: rgba(79,70,229,0.15);
-      color: #a5b4fc;
-      border: 1px solid rgba(79,70,229,0.25);
-      padding: 4px 10px;
-      border-radius: 50px;
-      font-size: 0.75rem;
-      font-weight: 500;
+      justify-content: center;
+      padding: 36px 20px 60px;
     }
 
-    /* ============================================================
-       MAIN CONTENT
-    ============================================================ */
-    .cv-main {
-      background: var(--white);
-      padding: 40px 36px;
+    /* ── THE CV DOCUMENT ──────────────────────────────── */
+    #cv-document {
+      width: 210mm;
+      min-height: 297mm;
+      background: #ffffff;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
       display: flex;
       flex-direction: column;
-      gap: 32px;
     }
 
-    /* Section */
-    .cv-section h2 {
-      font-size: 1rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--primary);
-      margin-bottom: 18px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--border);
-      position: relative;
-    }
-    .cv-section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background: var(--gradient);
-      border-radius: 2px;
-    }
-
-    /* Summary */
-    .summary-text {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 1.8;
-    }
-
-    /* Timeline items */
-    .timeline { display: flex; flex-direction: column; gap: 22px; }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 4px;
-      padding-left: 18px;
-      border-left: 3px solid var(--border);
-      position: relative;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -7px;
-      top: 6px;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--primary);
-      border: 2px solid #fff;
-      box-shadow: 0 0 0 2px var(--primary);
-    }
-
-    .timeline-header {
+    /* CV Header */
+    .cv-header {
+      background: #1e2a3a;
+      color: #fff;
+      padding: 36px 44px 32px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 4px;
+      gap: 24px;
+    }
+    .cv-header-left h1 {
+      font-family: "Merriweather", serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .cv-header-left .cv-subtitle {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #64b5f6;
+      margin-top: 6px;
+      letter-spacing: 0.3px;
+    }
+    .cv-header-left .cv-tagline {
+      font-size: 0.8rem;
+      color: #90a4ae;
+      margin-top: 8px;
+      max-width: 360px;
+      line-height: 1.5;
     }
 
-    .timeline-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text);
+    .cv-header-right {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: right;
+      flex-shrink: 0;
     }
-    .timeline-date {
+    .cv-contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      font-size: 0.78rem;
+      color: #90a4ae;
+    }
+    .cv-contact-row i { color: #64b5f6; width: 14px; }
+    .cv-contact-row a { color: #90a4ae; text-decoration: none; }
+    .cv-contact-row a:hover { color: #fff; }
+
+    /* Accent stripe */
+    .cv-stripe {
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed, #db2777);
+    }
+
+    /* CV Body */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 0;
+      flex: 1;
+    }
+
+    /* Main column */
+    .cv-main {
+      padding: 32px 36px;
+      border-right: 1px solid #f1f5f9;
+    }
+
+    /* Side column */
+    .cv-side {
+      padding: 32px 24px;
+      background: #f8fafc;
+    }
+
+    /* Section */
+    .cv-section { margin-bottom: 26px; }
+
+    .cv-section-title {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #2563eb;
+      margin-bottom: 14px;
+      padding-bottom: 7px;
+      border-bottom: 2px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cv-section-title i { font-size: 0.75rem; }
+
+    /* Summary */
+    .summary-text {
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.75;
+    }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 18px; }
+
+    .tl-item {
+      padding-left: 16px;
+      border-left: 2px solid #e2e8f0;
+      position: relative;
+    }
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2563eb;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1.5px #2563eb;
+    }
+
+    .tl-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tl-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .tl-date {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #fff;
+      background: #2563eb;
+      padding: 2px 9px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .tl-org {
       font-size: 0.78rem;
       font-weight: 600;
-      color: var(--white);
-      background: var(--gradient);
-      padding: 3px 10px;
-      border-radius: 50px;
-      white-space: nowrap;
+      color: #64748b;
+      margin: 3px 0 6px;
     }
-    .timeline-subtitle {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--primary);
+    .tl-desc {
+      font-size: 0.78rem;
+      color: #64748b;
+      line-height: 1.65;
     }
-    .timeline-desc {
-      font-size: 0.83rem;
-      color: var(--text-light);
-      line-height: 1.7;
-      margin-top: 4px;
-    }
-    .timeline-desc ul { padding-left: 16px; }
-    .timeline-desc li { margin-bottom: 3px; }
+    .tl-desc ul { padding-left: 14px; }
+    .tl-desc li { margin-bottom: 3px; }
 
-    /* Project cards in CV */
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .cv-project {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      transition: box-shadow 0.2s ease;
-    }
-    .cv-project:hover { box-shadow: 0 6px 20px rgba(79,70,229,0.1); }
-    .cv-project-title {
-      font-size: 0.9rem;
+    /* Grade badge */
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      padding: 4px 11px;
+      border-radius: 6px;
+      font-size: 0.75rem;
       font-weight: 700;
-      color: var(--text);
-      margin-bottom: 6px;
+      margin-top: 6px;
     }
-    .cv-project-desc {
-      font-size: 0.79rem;
-      color: var(--text-light);
+
+    /* Projects */
+    .proj-item { margin-bottom: 14px; }
+    .proj-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .proj-desc {
+      font-size: 0.77rem;
+      color: #64748b;
       line-height: 1.6;
-      margin-bottom: 10px;
+      margin: 3px 0 6px;
     }
-    .cv-project-tags {
+    .proj-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 5px;
-      margin-bottom: 10px;
+      margin-bottom: 4px;
     }
-    .cv-tag {
-      font-size: 0.7rem;
+    .proj-tag {
+      font-size: 0.68rem;
       font-weight: 600;
       padding: 2px 8px;
-      background: rgba(79,70,229,0.07);
-      color: var(--primary);
-      border-radius: 50px;
-      border: 1px solid rgba(79,70,229,0.12);
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-radius: 4px;
+      border: 1px solid #bfdbfe;
     }
-    .cv-project-link {
-      font-size: 0.75rem;
+    .proj-link {
+      font-size: 0.73rem;
+      color: #2563eb;
       font-weight: 600;
-      color: var(--primary);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+      text-decoration: none;
     }
-    .cv-project-link:hover { color: var(--accent); }
+    .proj-link:hover { text-decoration: underline; }
 
-    /* ============================================================
-       PRINT STYLES
-    ============================================================ */
+    /* ── SIDE COLUMN ──────────────────────────────────── */
+    .side-section { margin-bottom: 24px; }
+
+    .side-section-title {
+      font-size: 0.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #2563eb;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid #e2e8f0;
+    }
+
+    /* Skill bars */
+    .skill-row { margin-bottom: 9px; }
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.74rem;
+      color: #374151;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .skill-track {
+      height: 4px;
+      background: #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      border-radius: 10px;
+    }
+
+    /* Tags list */
+    .tag-list { display: flex; flex-direction: column; gap: 5px; }
+    .tag-item {
+      font-size: 0.74rem;
+      color: #374151;
+      padding: 4px 0;
+      border-bottom: 1px dashed #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tag-item:last-child { border-bottom: none; }
+    .tag-item i { color: #2563eb; width: 12px; font-size: 0.65rem; }
+
+    /* Languages */
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .lang-name { font-size: 0.76rem; color: #374151; font-weight: 500; }
+    .lang-dots { display: flex; gap: 3px; }
+    .lang-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #e2e8f0;
+    }
+    .lang-dot.on { background: #2563eb; }
+
+    /* Referees */
+    .ref-item { margin-bottom: 12px; }
+    .ref-name { font-size: 0.75rem; font-weight: 700; color: #1e293b; }
+    .ref-role { font-size: 0.7rem; color: #64748b; margin: 1px 0; }
+    .ref-contact { font-size: 0.68rem; color: #2563eb; }
+
+    /* CV Footer */
+    .cv-footer {
+      padding: 14px 36px;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cv-footer p { font-size: 0.72rem; color: #94a3b8; }
+
+    /* ── PRINT ─────────────────────────────────────────── */
     @media print {
       @page { size: A4; margin: 0; }
-
       body { background: #fff; }
       .toolbar { display: none !important; }
-      .cv-wrapper { padding: 0; max-width: 100%; }
-      .cv {
-        border-radius: 0;
-        box-shadow: none;
-        min-height: 100vh;
-        page-break-inside: avoid;
-      }
-      .cv-sidebar { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .timeline-date { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .skill-bar-fill { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      a { color: inherit; }
+      .page-wrap { padding: 0; background: none; }
+      #cv-document { box-shadow: none; width: 100%; min-height: 100vh; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     }
 
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
-    @media (max-width: 768px) {
-      .cv {
-        grid-template-columns: 1fr;
-        border-radius: 12px;
-      }
-      .cv-sidebar { padding: 32px 24px; }
-      .cv-main { padding: 28px 20px; }
-      .project-grid { grid-template-columns: 1fr; }
+    /* ── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 720px) {
+      #cv-document { width: 100%; min-height: unset; }
+      .cv-header { flex-direction: column; padding: 28px 24px 24px; }
+      .cv-header-right { text-align: left; }
+      .cv-contact-row { justify-content: flex-start; }
+      .cv-body { grid-template-columns: 1fr; }
+      .cv-side { border-top: 1px solid #e2e8f0; }
+      .cv-main { padding: 24px 20px; }
+      .cv-side { padding: 24px 20px; }
       .toolbar { padding: 10px 16px; }
-      .toolbar-brand { font-size: 0.9rem; }
-      .btn { padding: 8px 14px; font-size: 0.8rem; }
+      .toolbar-brand { display: none; }
     }
+
   </style>
 </head>
 <body>
 
-  <!-- Screen Toolbar -->
-  <div class="toolbar" role="toolbar" aria-label="CV actions">
-    <div class="toolbar-brand">&lt;<span>Awoke</span> /&gt; — CV</div>
+  <!-- ── TOOLBAR ──────────────────────────────────────── -->
+  <div class="toolbar" role="toolbar">
+    <div class="toolbar-left">
+      <span class="toolbar-brand">Awoke Derssie — <strong>Curriculum Vitae</strong></span>
+      <div class="progress-bar-wrap" id="progressWrap">
+        <span id="progressLabel">Generating PDF…</span>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+    </div>
     <div class="toolbar-actions">
-      <a href="index.html" class="btn btn-outline">
-        <i class="fas fa-arrow-left"></i> Back to Portfolio
+      <a href="index.html" class="t-btn t-btn-ghost">
+        <i class="fas fa-arrow-left"></i> Portfolio
       </a>
-      <button class="btn btn-primary" onclick="window.print()" aria-label="Print or save CV as PDF">
-        <i class="fas fa-download"></i> Download PDF
+      <button class="t-btn t-btn-download" id="downloadBtn" onclick="downloadPDF()">
+        <i class="fas fa-file-download"></i> Download PDF
       </button>
     </div>
   </div>
 
-  <!-- CV Document -->
-  <div class="cv-wrapper">
-    <div class="cv" role="main">
+  <!-- ── PAGE ─────────────────────────────────────────── -->
+  <div class="page-wrap">
+    <div id="cv-document">
 
-      <!-- ==============================
-           SIDEBAR
-      ============================== -->
-      <aside class="cv-sidebar" aria-label="Personal information and skills">
-
-        <!-- Profile -->
-        <div class="profile-photo">
-          <img src="images/myprofile.png" alt="Awoke Derssie profile photo" />
+      <!-- ══ HEADER ══ -->
+      <div class="cv-header">
+        <div class="cv-header-left">
           <h1>Awoke Derssie</h1>
-          <div class="job-title">Full-Stack Developer &amp; UI/UX Designer</div>
-        </div>
-
-        <!-- Contact -->
-        <div class="sidebar-section">
-          <h3>Contact</h3>
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:awokedersie@gmail.com">awokedersie@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <a href="tel:+251939013630">+251 939 013 630</a>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Debre Berhan, Ethiopia</span>
-          </div>
-          <div class="contact-item">
-            <i class="fab fa-github"></i>
-            <a href="https://github.com/Awoke-hub" target="_blank" rel="noopener noreferrer">github.com/Awoke-hub</a>
-          </div>
-          <div class="contact-item">
-            <i class="fab fa-telegram"></i>
-            <a href="https://t.me/dbu10178641" target="_blank" rel="noopener noreferrer">t.me/dbu10178641</a>
+          <div class="cv-subtitle">Full-Stack Developer &amp; UI/UX Designer</div>
+          <div class="cv-tagline">
+            Motivated IT undergraduate with 3+ years of hands-on development experience,
+            building production-grade web applications from concept to deployment.
           </div>
         </div>
+        <div class="cv-header-right">
+          <div class="cv-contact-row"><i class="fas fa-envelope"></i> awokedersie@gmail.com</div>
+          <div class="cv-contact-row"><i class="fas fa-phone"></i> +251 939 013 630</div>
+          <div class="cv-contact-row"><i class="fas fa-map-marker-alt"></i> Debre Berhan, Ethiopia</div>
+          <div class="cv-contact-row"><i class="fab fa-github"></i> <a href="https://github.com/Awoke-hub">github.com/Awoke-hub</a></div>
+          <div class="cv-contact-row"><i class="fab fa-telegram"></i> <a href="https://t.me/dbu10178641">t.me/dbu10178641</a></div>
+          <div class="cv-contact-row"><i class="fas fa-globe"></i> <a href="#">awokedersie@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="cv-stripe"></div>
 
-        <!-- Technical Skills -->
-        <div class="sidebar-section">
-          <h3>Technical Skills</h3>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>HTML &amp; CSS</span><span>95%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
+      <!-- ══ BODY ══ -->
+      <div class="cv-body">
+
+        <!-- ─── MAIN COLUMN ─────────────────────────────── -->
+        <div class="cv-main">
+
+          <!-- SUMMARY -->
+          <div class="cv-section">
+            <div class="cv-section-title"><i class="fas fa-user"></i> Professional Summary</div>
+            <p class="summary-text">
+              Dedicated and self-driven Fourth Year Information Technology student at Debre Berhan
+              University (DBU) with over three years of practical experience in full-stack web development.
+              Skilled in designing, building, and deploying end-to-end web applications using modern
+              technologies including React, Node.js, PHP, and MySQL. Combines strong technical ability
+              with a keen eye for clean, user-centred interface design. Actively seeking internship,
+              freelance, or entry-level software development opportunities where I can contribute and grow.
+            </p>
           </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>JavaScript</span><span>85%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div>
+
+          <!-- EDUCATION -->
+          <div class="cv-section">
+            <div class="cv-section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+            <div class="timeline">
+
+              <div class="tl-item">
+                <div class="tl-row">
+                  <span class="tl-title">Bachelor of Science — Information Technology</span>
+                  <span class="tl-date">2021 – Present</span>
+                </div>
+                <div class="tl-org">Debre Berhan University (DBU) · Debre Berhan, Ethiopia</div>
+                <div class="tl-desc">
+                  Currently in Fourth Year (Final Year). Coursework covers software engineering,
+                  database systems, web technologies, computer networks, and human-computer interaction.
+                </div>
+              </div>
+
+              <div class="tl-item">
+                <div class="tl-row">
+                  <span class="tl-title">Ethiopian University Entrance Examination (EUEE)</span>
+                  <span class="tl-date">2021</span>
+                </div>
+                <div class="tl-org">Grade 12 — National Examination · Ethiopia</div>
+                <div class="tl-desc">Successfully completed the national university entrance examination and secured placement at Debre Berhan University.</div>
+                <div class="grade-badge"><i class="fas fa-award"></i> Total Score: 356 / 700</div>
+              </div>
+
+            </div>
           </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>React.js</span><span>80%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
+
+          <!-- EXPERIENCE -->
+          <div class="cv-section">
+            <div class="cv-section-title"><i class="fas fa-briefcase"></i> Work Experience</div>
+            <div class="timeline">
+
+              <div class="tl-item">
+                <div class="tl-row">
+                  <span class="tl-title">Freelance Full-Stack Web Developer</span>
+                  <span class="tl-date">2022 – Present</span>
+                </div>
+                <div class="tl-org">Self-Employed · Remote / Debre Berhan</div>
+                <div class="tl-desc">
+                  <ul>
+                    <li>Designed and developed custom web applications for local businesses and individual clients.</li>
+                    <li>Delivered complete solutions — from requirements gathering and UI design to back-end development and deployment.</li>
+                    <li>Built responsive, cross-browser compatible interfaces using React, HTML5, CSS3, and JavaScript.</li>
+                    <li>Integrated RESTful APIs and relational databases (MySQL) into multiple client projects.</li>
+                    <li>Maintained and updated existing web systems based on client feedback.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="tl-item">
+                <div class="tl-row">
+                  <span class="tl-title">Lead Developer — DBU Student Clearance System</span>
+                  <span class="tl-date">2023 – 2024</span>
+                </div>
+                <div class="tl-org">Debre Berhan University · Academic Capstone Project</div>
+                <div class="tl-desc">
+                  <ul>
+                    <li>Led a team to design and build a full web-based system automating the student clearance process across multiple university departments.</li>
+                    <li>Designed relational database schema and developed a RESTful Node.js/Express API backend.</li>
+                    <li>Implemented role-based access control (RBAC) for students, department staff, and administrators.</li>
+                    <li>Reduced manual paperwork and clearance processing time significantly.</li>
+                    <li>Deployed the live system to a cloud server (Render) — accessible at <a class="proj-link" href="https://dbu-clearance-system.onrender.com">dbu-clearance-system.onrender.com</a>.</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
           </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>Node.js</span><span>78%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:78%"></div></div>
+
+          <!-- PROJECTS -->
+          <div class="cv-section">
+            <div class="cv-section-title"><i class="fas fa-code"></i> Key Projects</div>
+
+            <div class="proj-item">
+              <div class="proj-name">DBU Student Clearance Management System</div>
+              <div class="proj-desc">A multi-department web platform that automates university clearance workflows — allowing students to submit requests and departments to approve/reject them in real time. Deployed and live.</div>
+              <div class="proj-tags">
+                <span class="proj-tag">React</span>
+                <span class="proj-tag">Node.js</span>
+                <span class="proj-tag">Express</span>
+                <span class="proj-tag">MySQL</span>
+                <span class="proj-tag">REST API</span>
+              </div>
+              <a class="proj-link" href="https://dbu-clearance-system.onrender.com">🔗 dbu-clearance-system.onrender.com</a>
+            </div>
+
+            <div class="proj-item">
+              <div class="proj-name">Online Food Ordering Platform</div>
+              <div class="proj-desc">A dynamic food ordering web app with customer-facing menus, order placement, and delivery tracking. Includes a full admin panel for managing restaurants, menus, and customer orders.</div>
+              <div class="proj-tags">
+                <span class="proj-tag">PHP</span>
+                <span class="proj-tag">MySQL</span>
+                <span class="proj-tag">JavaScript</span>
+                <span class="proj-tag">HTML/CSS</span>
+              </div>
+              <a class="proj-link" href="http://awoke.infy.uk/food-order/index.php">🔗 awoke.infy.uk/food-order</a>
+            </div>
+
           </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>PHP</span><span>80%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>MySQL</span><span>75%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:75%"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>UI/UX Design</span><span>90%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>Git &amp; GitHub</span><span>85%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div>
-          </div>
+
         </div>
 
-        <!-- Languages -->
-        <div class="sidebar-section">
-          <h3>Languages</h3>
-          <div class="lang-item">
-            <span>Amharic</span>
-            <div class="lang-level">
-              <div class="lang-dot filled"></div>
-              <div class="lang-dot filled"></div>
-              <div class="lang-dot filled"></div>
-              <div class="lang-dot filled"></div>
-              <div class="lang-dot filled"></div>
+        <!-- ─── SIDE COLUMN ──────────────────────────────── -->
+        <div class="cv-side">
+
+          <!-- TECHNICAL SKILLS -->
+          <div class="side-section">
+            <div class="side-section-title">Technical Skills</div>
+            <div class="skill-row"><div class="skill-name"><span>HTML &amp; CSS</span><span>95%</span></div><div class="skill-track"><div class="skill-fill" style="width:95%"></div></div></div>
+            <div class="skill-row"><div class="skill-name"><span>JavaScript</span><span>85%</span></div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
+            <div class="skill-row"><div class="skill-name"><span>React.js</span><span>80%</span></div><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
+            <div class="skill-row"><div class="skill-name"><span>Node.js</span><span>78%</span></div><div class="skill-track"><div class="skill-fill" style="width:78%"></div></div></div>
+            <div class="skill-row"><div class="skill-name"><span>PHP</span><span>80%</span></div><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
+            <div class="skill-row"><div class="skill-name"><span>MySQL</span><span>75%</span></div><div class="skill-track"><div class="skill-fill" style="width:75%"></div></div></div>
+            <div class="skill-row"><div class="skill-name"><span>UI/UX Design</span><span>88%</span></div><div class="skill-track"><div class="skill-fill" style="width:88%"></div></div></div>
+            <div class="skill-row"><div class="skill-name"><span>Git &amp; GitHub</span><span>85%</span></div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
+          </div>
+
+          <!-- TOOLS -->
+          <div class="side-section">
+            <div class="side-section-title">Tools &amp; Platforms</div>
+            <div class="tag-list">
+              <div class="tag-item"><i class="fas fa-check"></i> Visual Studio Code</div>
+              <div class="tag-item"><i class="fas fa-check"></i> Git &amp; GitHub</div>
+              <div class="tag-item"><i class="fas fa-check"></i> Figma</div>
+              <div class="tag-item"><i class="fas fa-check"></i> Postman</div>
+              <div class="tag-item"><i class="fas fa-check"></i> Linux / CLI</div>
+              <div class="tag-item"><i class="fas fa-check"></i> Render (Cloud Deploy)</div>
             </div>
           </div>
-          <div class="lang-item">
-            <span>English</span>
-            <div class="lang-level">
-              <div class="lang-dot filled"></div>
-              <div class="lang-dot filled"></div>
-              <div class="lang-dot filled"></div>
-              <div class="lang-dot filled"></div>
-              <div class="lang-dot"></div>
+
+          <!-- SOFT SKILLS -->
+          <div class="side-section">
+            <div class="side-section-title">Soft Skills</div>
+            <div class="tag-list">
+              <div class="tag-item"><i class="fas fa-check"></i> Problem Solving</div>
+              <div class="tag-item"><i class="fas fa-check"></i> Team Collaboration</div>
+              <div class="tag-item"><i class="fas fa-check"></i> Communication</div>
+              <div class="tag-item"><i class="fas fa-check"></i> Self-Motivated</div>
+              <div class="tag-item"><i class="fas fa-check"></i> Adaptability</div>
+              <div class="tag-item"><i class="fas fa-check"></i> Time Management</div>
             </div>
           </div>
+
+          <!-- LANGUAGES -->
+          <div class="side-section">
+            <div class="side-section-title">Languages</div>
+            <div class="lang-row">
+              <span class="lang-name">Amharic</span>
+              <div class="lang-dots">
+                <div class="lang-dot on"></div><div class="lang-dot on"></div>
+                <div class="lang-dot on"></div><div class="lang-dot on"></div>
+                <div class="lang-dot on"></div>
+              </div>
+            </div>
+            <div class="lang-row">
+              <span class="lang-name">English</span>
+              <div class="lang-dots">
+                <div class="lang-dot on"></div><div class="lang-dot on"></div>
+                <div class="lang-dot on"></div><div class="lang-dot on"></div>
+                <div class="lang-dot"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REFERENCES -->
+          <div class="side-section">
+            <div class="side-section-title">References</div>
+            <div class="ref-item">
+              <div class="ref-name">Available on Request</div>
+              <div class="ref-role">Academic &amp; professional references</div>
+              <div class="ref-role">can be provided upon request.</div>
+            </div>
+          </div>
+
         </div>
+      </div>
 
-        <!-- Interests -->
-        <div class="sidebar-section">
-          <h3>Interests</h3>
-          <div class="interests-list">
-            <span class="interest-tag">Open Source</span>
-            <span class="interest-tag">UI Design</span>
-            <span class="interest-tag">Problem Solving</span>
-            <span class="interest-tag">Tech Blogging</span>
-            <span class="interest-tag">Freelancing</span>
-          </div>
-        </div>
+      <!-- ══ FOOTER ══ -->
+      <div class="cv-footer">
+        <p>Awoke Derssie · Curriculum Vitae · <span id="cv-year"></span></p>
+        <p>awokedersie@gmail.com · +251 939 013 630 · Debre Berhan, Ethiopia</p>
+      </div>
 
-      </aside>
-
-      <!-- ==============================
-           MAIN CONTENT
-      ============================== -->
-      <main class="cv-main">
-
-        <!-- Professional Summary -->
-        <section class="cv-section" aria-label="Professional summary">
-          <h2>Professional Summary</h2>
-          <p class="summary-text">
-            Motivated Fourth Year Information Technology student at Debre Berhan University with 3+ years
-            of hands-on experience building full-stack web applications. Proficient in React, Node.js, PHP,
-            and MySQL — with a strong eye for UI/UX design. Proven track record delivering production-level
-            systems including a university clearance management platform and an online food ordering system.
-            Available for freelance projects and open to full-time opportunities.
-          </p>
-        </section>
-
-        <!-- Experience -->
-        <section class="cv-section" aria-label="Work experience">
-          <h2>Experience</h2>
-          <div class="timeline">
-
-            <div class="timeline-item">
-              <div class="timeline-header">
-                <span class="timeline-title">Freelance Full-Stack Developer</span>
-                <span class="timeline-date">2022 — Present</span>
-              </div>
-              <div class="timeline-subtitle">Self-Employed · Remote</div>
-              <div class="timeline-desc">
-                <ul>
-                  <li>Designed and developed custom web applications for local and online clients.</li>
-                  <li>Delivered end-to-end solutions — from requirements gathering to deployment.</li>
-                  <li>Built responsive, accessible interfaces using React, HTML/CSS, and JavaScript.</li>
-                  <li>Integrated REST APIs and relational databases (MySQL) into client projects.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-header">
-                <span class="timeline-title">Web Developer — DBU Clearance System</span>
-                <span class="timeline-date">2023 — 2024</span>
-              </div>
-              <div class="timeline-subtitle">Debre Berhan University · Academic Project</div>
-              <div class="timeline-desc">
-                <ul>
-                  <li>Led development of a web-based student clearance automation system used across multiple departments.</li>
-                  <li>Designed the database schema and built a RESTful API backend using Node.js.</li>
-                  <li>Implemented role-based access control for students, departments, and admins.</li>
-                  <li>Deployed the application to a cloud server on Render.</li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Education -->
-        <section class="cv-section" aria-label="Education">
-          <h2>Education</h2>
-          <div class="timeline">
-
-            <div class="timeline-item">
-              <div class="timeline-header">
-                <span class="timeline-title">BSc. Information Technology</span>
-                <span class="timeline-date">2021 — Present</span>
-              </div>
-              <div class="timeline-subtitle">Debre Berhan University · Debre Berhan, Ethiopia</div>
-              <div class="timeline-desc">
-                Fourth Year student with focus on software engineering, web technologies, database systems, and UI/UX design.
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="cv-section" aria-label="Projects">
-          <h2>Key Projects</h2>
-          <div class="project-grid">
-
-            <div class="cv-project">
-              <div class="cv-project-title">DBU Student Clearance System</div>
-              <div class="cv-project-desc">
-                Web system automating the student clearance process at Debre Berhan University.
-                Multi-department workflow with real-time status tracking.
-              </div>
-              <div class="cv-project-tags">
-                <span class="cv-tag">React</span>
-                <span class="cv-tag">Node.js</span>
-                <span class="cv-tag">MySQL</span>
-                <span class="cv-tag">REST API</span>
-              </div>
-              <a href="https://dbu-clearance-system.onrender.com" class="cv-project-link" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-            </div>
-
-            <div class="cv-project">
-              <div class="cv-project-title">Online Food Ordering Platform</div>
-              <div class="cv-project-desc">
-                Full-featured food ordering platform with user menus, order placement, delivery tracking,
-                and an admin panel for restaurant management.
-              </div>
-              <div class="cv-project-tags">
-                <span class="cv-tag">PHP</span>
-                <span class="cv-tag">MySQL</span>
-                <span class="cv-tag">JavaScript</span>
-                <span class="cv-tag">HTML/CSS</span>
-              </div>
-              <a href="http://awoke.infy.uk/food-order/index.php" class="cv-project-link" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Soft Skills / Tools -->
-        <section class="cv-section" aria-label="Tools and soft skills">
-          <h2>Tools &amp; Soft Skills</h2>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;">
-            <span class="cv-tag" style="padding:5px 12px; font-size:0.78rem;">VS Code</span>
-            <span class="cv-tag" style="padding:5px 12px; font-size:0.78rem;">Git &amp; GitHub</span>
-            <span class="cv-tag" style="padding:5px 12px; font-size:0.78rem;">Figma</span>
-            <span class="cv-tag" style="padding:5px 12px; font-size:0.78rem;">Postman</span>
-            <span class="cv-tag" style="padding:5px 12px; font-size:0.78rem;">REST APIs</span>
-            <span class="cv-tag" style="padding:5px 12px; font-size:0.78rem;">Problem Solving</span>
-            <span class="cv-tag" style="padding:5px 12px; font-size:0.78rem;">Team Collaboration</span>
-            <span class="cv-tag" style="padding:5px 12px; font-size:0.78rem;">Communication</span>
-            <span class="cv-tag" style="padding:5px 12px; font-size:0.78rem;">Self-Motivated</span>
-            <span class="cv-tag" style="padding:5px 12px; font-size:0.78rem;">Agile Mindset</span>
-          </div>
-        </section>
-
-      </main>
-    </div>
+    </div><!-- #cv-document -->
   </div>
+
+  <!-- html2pdf CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    // Dynamic year
+    document.getElementById('cv-year').textContent = new Date().getFullYear();
+
+    function downloadPDF() {
+      const btn = document.getElementById('downloadBtn');
+      const progressWrap = document.getElementById('progressWrap');
+      const progressFill = document.getElementById('progressFill');
+      const progressLabel = document.getElementById('progressLabel');
+
+      // UI feedback
+      btn.classList.add('loading');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating…';
+      btn.disabled = true;
+      progressWrap.classList.add('show');
+
+      // Animate progress bar
+      let pct = 0;
+      const ticker = setInterval(() => {
+        pct = Math.min(pct + Math.random() * 18, 88);
+        progressFill.style.width = pct + '%';
+      }, 300);
+
+      const element = document.getElementById('cv-document');
+
+      const opt = {
+        margin:      0,
+        filename:    'Awoke_Derssie_CV.pdf',
+        image:       { type: 'jpeg', quality: 0.98 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          letterRendering: true,
+          backgroundColor: '#ffffff'
+        },
+        jsPDF: {
+          unit: 'mm',
+          format: 'a4',
+          orientation: 'portrait',
+          compress: true
+        },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        clearInterval(ticker);
+        progressFill.style.width = '100%';
+        progressLabel.textContent = 'Done!';
+
+        setTimeout(() => {
+          btn.classList.remove('loading');
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-file-download"></i> Download PDF';
+          progressWrap.classList.remove('show');
+          progressFill.style.width = '0%';
+          progressLabel.textContent = 'Generating PDF…';
+        }, 1400);
+      });
+    }
+  </script>
 
 </body>
 </html>
