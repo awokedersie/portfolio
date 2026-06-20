@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
     hamburger.classList.remove('active');
     navList.classList.remove('active');
     hamburger.setAttribute('aria-expanded', 'false');
-    body.style.overflow = '';
   }
 
   function openMenu() {
@@ -68,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
     hamburger.classList.add('active');
     navList.classList.add('active');
     hamburger.setAttribute('aria-expanded', 'true');
-    body.style.overflow = 'hidden';
   }
 
   if (hamburger) {
