@@ -32,7 +32,6 @@
     .toolbar-brand { font-size: 0.95rem; font-weight: 600; color: #94a3b8; }
     .toolbar-brand strong { color: #fff; }
     .toolbar-actions { display: flex; gap: 10px; }
-
     .t-btn {
       display: inline-flex; align-items: center; gap: 7px;
       padding: 9px 20px; border-radius: 8px;
@@ -44,11 +43,10 @@
     .t-btn-download { background: #2563eb; color: #fff; box-shadow: 0 4px 14px rgba(37,99,235,0.35); }
     .t-btn-download:hover { background: #1d4ed8; transform: translateY(-1px); }
     .t-btn-download.loading { opacity: 0.7; cursor: not-allowed; }
-
     .progress-bar-wrap { display: none; align-items: center; gap: 10px; color: #94a3b8; font-size: 0.82rem; }
     .progress-bar-wrap.show { display: flex; }
     .progress-track { width: 120px; height: 5px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
-    .progress-fill { height: 100%; background: #2563eb; border-radius: 10px; width: 0%; transition: width 0.3s ease; }
+    .progress-fill { height: 100%; background: #2563eb; border-radius: 10px; width: 0%; transition: width 0.3s; }
 
     /* ── PAGE WRAP ───────────────────────────────────── */
     .page-wrap {
@@ -76,13 +74,10 @@
       font-size: 2.2rem; font-weight: 700;
       color: #fff; letter-spacing: -0.5px; line-height: 1.15;
     }
-    .cv-role {
-      font-size: 1rem; font-weight: 500;
-      color: #64b5f6; margin-top: 7px;
-    }
+    .cv-role { font-size: 1rem; font-weight: 500; color: #64b5f6; margin-top: 8px; }
     .cv-header-right {
       display: flex; flex-direction: column; gap: 7px;
-      text-align: right; flex-shrink: 0;
+      text-align: right; flex-shrink: 0; padding-top: 4px;
     }
     .cv-contact-row {
       display: flex; align-items: center; justify-content: flex-end; gap: 9px;
@@ -91,48 +86,60 @@
     .cv-contact-row i { color: #64b5f6; width: 15px; }
     .cv-contact-row a { color: #90a4ae; text-decoration: none; }
     .cv-contact-row a:hover { color: #fff; }
-
     .cv-stripe { height: 4px; background: linear-gradient(90deg,#2563eb,#7c3aed,#db2777); }
 
-    /* ── BODY GRID ───────────────────────────────────── */
+    /* ── BODY ────────────────────────────────────────── */
     .cv-body {
       display: grid;
-      grid-template-columns: 1fr 0.52fr;
+      grid-template-columns: 1fr 0.45fr;
       flex: 1;
+      align-items: start;
     }
+    .cv-main { padding: 38px 42px; border-right: 1px solid #eef0f4; }
+    .cv-side  { padding: 38px 28px; background: #f8fafc; }
 
-    .cv-main { padding: 36px 40px; border-right: 1px solid #eef0f4; }
-    .cv-side  { padding: 36px 28px; background: #f8fafc; }
+    /* ── SECTION ─────────────────────────────────────── */
+    .cv-section { margin-bottom: 34px; }
+    .cv-section:last-child { margin-bottom: 0; }
 
-    /* ── SECTION TITLE ───────────────────────────────── */
     .sec-title {
       font-size: 0.72rem; font-weight: 800;
       text-transform: uppercase; letter-spacing: 2.5px;
       color: #2563eb;
-      padding-bottom: 8px; margin-bottom: 18px;
+      padding-bottom: 9px; margin-bottom: 18px;
       border-bottom: 2px solid #e2e8f0;
       display: flex; align-items: center; gap: 8px;
     }
     .sec-title i { font-size: 0.8rem; }
 
-    .cv-section { margin-bottom: 32px; }
-
-    /* ── PROFILE ─────────────────────────────────────── */
+    /* ── PROFILE TEXT ────────────────────────────────── */
     .profile-text {
-      font-size: 0.97rem; color: #475569; line-height: 1.8;
+      font-size: 0.97rem; color: #475569; line-height: 1.85;
     }
+
+    /* ── SKILL CATEGORIES ────────────────────────────── */
+    .skill-category { margin-bottom: 13px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    .skill-cat-label {
+      font-size: 0.82rem; font-weight: 700; color: #1e293b;
+      min-width: 80px; flex-shrink: 0;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-chip {
+      font-size: 0.82rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 20px;
+      background: #eff6ff; color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+    .skill-chip.backend { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
+    .skill-chip.db      { background: #fdf4ff; color: #6b21a8; border-color: #e9d5ff; }
 
     /* ── TIMELINE ────────────────────────────────────── */
     .timeline { display: flex; flex-direction: column; gap: 22px; }
-
     .tl-item {
-      padding-left: 18px;
-      border-left: 2px solid #e2e8f0;
-      position: relative;
+      padding-left: 18px; border-left: 2px solid #e2e8f0; position: relative;
     }
     .tl-item::before {
-      content: '';
-      position: absolute; left: -5px; top: 6px;
+      content: ''; position: absolute; left: -5px; top: 6px;
       width: 8px; height: 8px; border-radius: 50%;
       background: #2563eb; border: 2px solid #fff;
       box-shadow: 0 0 0 1.5px #2563eb;
@@ -141,23 +148,17 @@
       display: flex; justify-content: space-between; align-items: flex-start;
       gap: 10px; flex-wrap: wrap; margin-bottom: 3px;
     }
-    .tl-title {
-      font-size: 1rem; font-weight: 700; color: #1e293b;
-    }
+    .tl-title { font-size: 1rem; font-weight: 700; color: #1e293b; }
     .tl-date {
       font-size: 0.78rem; font-weight: 600; color: #fff;
       background: #2563eb; padding: 3px 10px; border-radius: 4px;
       white-space: nowrap; flex-shrink: 0;
     }
-    .tl-org {
-      font-size: 0.88rem; font-weight: 600; color: #64748b;
-      margin-bottom: 7px;
-    }
+    .tl-org { font-size: 0.88rem; font-weight: 600; color: #64748b; margin-bottom: 7px; }
     .tl-bullets { padding-left: 16px; }
     .tl-bullets li {
       font-size: 0.9rem; color: #64748b;
-      line-height: 1.65; margin-bottom: 4px;
-      list-style: disc;
+      line-height: 1.7; margin-bottom: 4px; list-style: disc;
     }
 
     /* ── GRADE BADGE ─────────────────────────────────── */
@@ -169,78 +170,64 @@
     }
 
     /* ── PROJECTS ────────────────────────────────────── */
-    .proj-item { margin-bottom: 18px; }
-    .proj-row {
-      display: flex; align-items: center; gap: 8px;
-      margin-bottom: 4px;
-    }
+    .proj-item { margin-bottom: 20px; }
+    .proj-item:last-child { margin-bottom: 0; }
+    .proj-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
     .proj-name { font-size: 0.97rem; font-weight: 700; color: #1e293b; }
     .proj-live {
       font-size: 0.72rem; font-weight: 700; color: #16a34a;
-      background: #dcfce7; padding: 2px 8px; border-radius: 20px;
+      background: #dcfce7; padding: 2px 9px; border-radius: 20px;
     }
-    .proj-desc {
-      font-size: 0.9rem; color: #64748b; line-height: 1.6; margin-bottom: 7px;
-    }
-    .proj-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 5px; }
+    .proj-desc { font-size: 0.9rem; color: #64748b; line-height: 1.65; margin-bottom: 8px; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 6px; }
     .proj-tag {
-      font-size: 0.75rem; font-weight: 600; padding: 3px 10px;
+      font-size: 0.76rem; font-weight: 600; padding: 3px 10px;
       background: #eff6ff; color: #1d4ed8;
       border-radius: 4px; border: 1px solid #bfdbfe;
     }
     .proj-link { font-size: 0.82rem; color: #2563eb; font-weight: 600; text-decoration: none; }
     .proj-link:hover { text-decoration: underline; }
 
-    /* ── SIDE TITLE ──────────────────────────────────── */
-    .side-title {
-      font-size: 0.68rem; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 2px;
-      color: #2563eb; padding-bottom: 7px; margin-bottom: 14px;
-      border-bottom: 1.5px solid #e2e8f0;
-    }
-    .side-section { margin-bottom: 28px; }
-
-    /* ── SKILL BARS ──────────────────────────────────── */
-    .skill-row { margin-bottom: 11px; }
-    .skill-label {
-      display: flex; justify-content: space-between;
-      font-size: 0.87rem; color: #374151; font-weight: 500;
-      margin-bottom: 5px;
-    }
-    .skill-track { height: 5px; background: #e2e8f0; border-radius: 10px; overflow: hidden; }
-    .skill-fill { height: 100%; background: linear-gradient(90deg,#2563eb,#7c3aed); border-radius: 10px; }
-
-    /* ── TAG LIST ────────────────────────────────────── */
-    .tag-list { display: flex; flex-direction: column; gap: 6px; }
-    .tag-item {
-      font-size: 0.87rem; color: #374151;
-      padding: 5px 0; border-bottom: 1px dashed #e2e8f0;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .tag-item:last-child { border-bottom: none; }
-    .tag-item i { color: #2563eb; width: 13px; font-size: 0.7rem; }
-
-    /* ── LANGUAGES ───────────────────────────────────── */
-    .lang-row {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 10px;
-    }
-    .lang-name { font-size: 0.88rem; color: #374151; font-weight: 500; }
-    .lang-dots { display: flex; gap: 4px; }
-    .lang-dot { width: 8px; height: 8px; border-radius: 50%; background: #e2e8f0; }
-    .lang-dot.on { background: #2563eb; }
-
     /* ── CERT PLACEHOLDER ────────────────────────────── */
     .cert-placeholder {
-      font-size: 0.85rem; color: #94a3b8;
-      font-style: italic; padding: 10px 0;
-      border: 1.5px dashed #cbd5e1;
-      border-radius: 6px; text-align: center;
+      font-size: 0.88rem; color: #94a3b8; font-style: italic;
+      padding: 12px 16px; border: 1.5px dashed #cbd5e1;
+      border-radius: 6px; text-align: center; line-height: 1.6;
     }
+
+    /* ── SIDEBAR ─────────────────────────────────────── */
+    .side-section { margin-bottom: 32px; }
+    .side-section:last-child { margin-bottom: 0; }
+    .side-title {
+      font-size: 0.68rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 2px; color: #2563eb;
+      padding-bottom: 8px; margin-bottom: 14px;
+      border-bottom: 1.5px solid #e2e8f0;
+    }
+
+    /* ── LANGUAGE DOTS ───────────────────────────────── */
+    .lang-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 12px;
+    }
+    .lang-name { font-size: 0.9rem; color: #374151; font-weight: 500; }
+    .lang-dots { display: flex; gap: 5px; }
+    .lang-dot { width: 9px; height: 9px; border-radius: 50%; background: #e2e8f0; }
+    .lang-dot.on { background: #2563eb; }
+
+    /* ── TOOLS LIST ──────────────────────────────────── */
+    .tool-list { display: flex; flex-direction: column; gap: 8px; }
+    .tool-item {
+      font-size: 0.88rem; color: #374151;
+      padding: 5px 0; border-bottom: 1px dashed #e2e8f0;
+      display: flex; align-items: center; gap: 9px;
+    }
+    .tool-item:last-child { border-bottom: none; }
+    .tool-item i { color: #2563eb; width: 14px; font-size: 0.72rem; }
 
     /* ── FOOTER ──────────────────────────────────────── */
     .cv-footer {
-      padding: 14px 40px; background: #f8fafc;
+      padding: 14px 42px; background: #f8fafc;
       border-top: 1px solid #e2e8f0;
       display: flex; justify-content: space-between; align-items: center;
     }
@@ -283,9 +270,7 @@
       </div>
     </div>
     <div class="toolbar-actions">
-      <a href="index.html" class="t-btn t-btn-ghost">
-        <i class="fas fa-arrow-left"></i> Portfolio
-      </a>
+      <a href="index.html" class="t-btn t-btn-ghost"><i class="fas fa-arrow-left"></i> Portfolio</a>
       <button class="t-btn t-btn-download" id="downloadBtn" onclick="downloadPDF()">
         <i class="fas fa-file-download"></i> Download PDF
       </button>
@@ -296,7 +281,7 @@
   <div class="page-wrap">
     <div id="cv-document">
 
-      <!-- ══ HEADER ══ -->
+      <!-- ══ 1. HEADER ══ -->
       <div class="cv-header">
         <div>
           <div class="cv-name">Awoke Derssie</div>
@@ -306,8 +291,8 @@
           <div class="cv-contact-row"><i class="fas fa-envelope"></i> awokedersie@gmail.com</div>
           <div class="cv-contact-row"><i class="fas fa-phone"></i> +251 939 013 630</div>
           <div class="cv-contact-row"><i class="fas fa-map-marker-alt"></i> Debre Berhan, Ethiopia</div>
-          <div class="cv-contact-row"><i class="fab fa-github"></i> <a href="https://github.com/Awoke-hub" target="_blank">github.com/Awoke-hub</a></div>
-          <div class="cv-contact-row"><i class="fab fa-telegram"></i> <a href="https://t.me/dbu10178641" target="_blank">t.me/dbu10178641</a></div>
+          <div class="cv-contact-row"><i class="fab fa-github"></i><a href="https://github.com/Awoke-hub" target="_blank">github.com/Awoke-hub</a></div>
+          <div class="cv-contact-row"><i class="fab fa-telegram"></i><a href="https://t.me/dbu10178641" target="_blank">t.me/dbu10178641</a></div>
         </div>
       </div>
       <div class="cv-stripe"></div>
@@ -315,12 +300,12 @@
       <!-- ══ BODY ══ -->
       <div class="cv-body">
 
-        <!-- ─── MAIN ──────────────────────────────────── -->
+        <!-- ─── MAIN COLUMN ───────────────────────────── -->
         <div class="cv-main">
 
-          <!-- PROFILE -->
+          <!-- ── 2. PROFESSIONAL SUMMARY ── -->
           <div class="cv-section">
-            <div class="sec-title"><i class="fas fa-user"></i> Profile</div>
+            <div class="sec-title"><i class="fas fa-user"></i> Professional Summary</div>
             <p class="profile-text">
               Final year IT student at Debre Berhan University with 3+ years of
               freelance full-stack development experience. Seeking internship or
@@ -328,32 +313,76 @@
             </p>
           </div>
 
-          <!-- EDUCATION -->
+          <!-- ── 3. TECHNICAL SKILLS ── -->
           <div class="cv-section">
-            <div class="sec-title"><i class="fas fa-graduation-cap"></i> Education</div>
-            <div class="timeline">
+            <div class="sec-title"><i class="fas fa-laptop-code"></i> Technical Skills</div>
 
-              <div class="tl-item">
-                <div class="tl-row">
-                  <span class="tl-title">BSc — Information Technology</span>
-                  <span class="tl-date">2021 – 2025</span>
-                </div>
-                <div class="tl-org">Debre Berhan University (DBU) · Ethiopia</div>
+            <div class="skill-category">
+              <span class="skill-cat-label">Frontend</span>
+              <div class="skill-tags">
+                <span class="skill-chip">HTML</span>
+                <span class="skill-chip">CSS</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">React</span>
               </div>
-
-              <div class="tl-item">
-                <div class="tl-row">
-                  <span class="tl-title">Ethiopian University Entrance Exam (EUEE)</span>
-                  <span class="tl-date">2021</span>
-                </div>
-                <div class="tl-org">Grade 12 · National Examination · Ethiopia</div>
-                <div class="grade-badge"><i class="fas fa-award"></i> Score: 356 / 700</div>
-              </div>
-
             </div>
+
+            <div class="skill-category">
+              <span class="skill-cat-label">Backend</span>
+              <div class="skill-tags">
+                <span class="skill-chip backend">Node.js</span>
+                <span class="skill-chip backend">PHP</span>
+                <span class="skill-chip backend">Express</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <span class="skill-cat-label">Database</span>
+              <div class="skill-tags">
+                <span class="skill-chip db">MySQL</span>
+                <span class="skill-chip db">PostgreSQL</span>
+              </div>
+            </div>
+
           </div>
 
-          <!-- EXPERIENCE -->
+          <!-- ── 4. PROJECTS ── -->
+          <div class="cv-section">
+            <div class="sec-title"><i class="fas fa-code"></i> Projects</div>
+
+            <div class="proj-item">
+              <div class="proj-row">
+                <span class="proj-name">DBU Student Clearance System</span>
+                <span class="proj-live">● Live</span>
+              </div>
+              <div class="proj-desc">Automated multi-department university clearance with real-time approval workflows.</div>
+              <div class="proj-tags">
+                <span class="proj-tag">React</span>
+                <span class="proj-tag">Node.js</span>
+                <span class="proj-tag">MySQL</span>
+                <span class="proj-tag">REST API</span>
+              </div>
+              <a class="proj-link" href="https://dbu-clearance-system.onrender.com" target="_blank">🔗 dbu-clearance-system.onrender.com</a>
+            </div>
+
+            <div class="proj-item">
+              <div class="proj-row">
+                <span class="proj-name">Food Ordering Platform</span>
+                <span class="proj-live">● Live</span>
+              </div>
+              <div class="proj-desc">Online food ordering app with menus, order tracking and admin management panel.</div>
+              <div class="proj-tags">
+                <span class="proj-tag">PHP</span>
+                <span class="proj-tag">MySQL</span>
+                <span class="proj-tag">JavaScript</span>
+                <span class="proj-tag">HTML/CSS</span>
+              </div>
+              <a class="proj-link" href="http://awoke.infy.uk/food-order/index.php" target="_blank">🔗 awoke.infy.uk/food-order</a>
+            </div>
+
+          </div>
+
+          <!-- ── 5. EXPERIENCE ── -->
           <div class="cv-section">
             <div class="sec-title"><i class="fas fa-briefcase"></i> Experience</div>
             <div class="timeline">
@@ -385,46 +414,37 @@
             </div>
           </div>
 
-          <!-- PROJECTS -->
+          <!-- ── 6. EDUCATION ── -->
           <div class="cv-section">
-            <div class="sec-title"><i class="fas fa-code"></i> Projects</div>
+            <div class="sec-title"><i class="fas fa-graduation-cap"></i> Education</div>
+            <div class="timeline">
 
-            <div class="proj-item">
-              <div class="proj-row">
-                <span class="proj-name">DBU Student Clearance System</span>
-                <span class="proj-live">● Live</span>
+              <div class="tl-item">
+                <div class="tl-row">
+                  <span class="tl-title">BSc — Information Technology</span>
+                  <span class="tl-date">2021 – 2025</span>
+                </div>
+                <div class="tl-org">Debre Berhan University (DBU) · Ethiopia</div>
               </div>
-              <div class="proj-desc">Automated multi-department university clearance with real-time approval.</div>
-              <div class="proj-tags">
-                <span class="proj-tag">React</span>
-                <span class="proj-tag">Node.js</span>
-                <span class="proj-tag">MySQL</span>
-                <span class="proj-tag">REST API</span>
+
+              <div class="tl-item">
+                <div class="tl-row">
+                  <span class="tl-title">Ethiopian University Entrance Exam (EUEE)</span>
+                  <span class="tl-date">2021</span>
+                </div>
+                <div class="tl-org">Grade 12 · National Examination · Ethiopia</div>
+                <div class="grade-badge"><i class="fas fa-award"></i> Score: 356 / 700</div>
               </div>
-              <a class="proj-link" href="https://dbu-clearance-system.onrender.com" target="_blank">🔗 dbu-clearance-system.onrender.com</a>
+
             </div>
-
-            <div class="proj-item">
-              <div class="proj-row">
-                <span class="proj-name">Food Ordering Platform</span>
-                <span class="proj-live">● Live</span>
-              </div>
-              <div class="proj-desc">Online food ordering app with menus, order tracking and admin panel.</div>
-              <div class="proj-tags">
-                <span class="proj-tag">PHP</span>
-                <span class="proj-tag">MySQL</span>
-                <span class="proj-tag">JavaScript</span>
-                <span class="proj-tag">HTML/CSS</span>
-              </div>
-              <a class="proj-link" href="http://awoke.infy.uk/food-order/index.php" target="_blank">🔗 awoke.infy.uk/food-order</a>
-            </div>
-
           </div>
 
-          <!-- CERTIFICATIONS — ready to fill -->
+          <!-- ── 7. CERTIFICATIONS ── -->
           <div class="cv-section">
             <div class="sec-title"><i class="fas fa-certificate"></i> Certifications</div>
-            <div class="cert-placeholder">Certifications will be added soon (e.g. Security+, AWS, etc.)</div>
+            <div class="cert-placeholder">
+              Certifications will be added soon — e.g. Security+, AWS, etc.
+            </div>
           </div>
 
         </div>
@@ -432,52 +452,7 @@
         <!-- ─── SIDEBAR ────────────────────────────────── -->
         <div class="cv-side">
 
-          <!-- SKILLS -->
-          <div class="side-section">
-            <div class="side-title">Technical Skills</div>
-            <div class="skill-row">
-              <div class="skill-label"><span>HTML &amp; CSS</span><span>95%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="width:95%"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label"><span>JavaScript</span><span>85%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label"><span>React.js</span><span>80%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label"><span>Node.js</span><span>78%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="width:78%"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label"><span>PHP</span><span>80%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label"><span>MySQL</span><span>75%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="width:75%"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label"><span>Git &amp; GitHub</span><span>85%</span></div>
-              <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
-            </div>
-          </div>
-
-          <!-- TOOLS -->
-          <div class="side-section">
-            <div class="side-title">Tools</div>
-            <div class="tag-list">
-              <div class="tag-item"><i class="fas fa-check"></i> VS Code</div>
-              <div class="tag-item"><i class="fas fa-check"></i> Figma</div>
-              <div class="tag-item"><i class="fas fa-check"></i> Postman</div>
-              <div class="tag-item"><i class="fas fa-check"></i> Linux / CLI</div>
-              <div class="tag-item"><i class="fas fa-check"></i> Render</div>
-            </div>
-          </div>
-
-          <!-- LANGUAGES -->
+          <!-- ── 8. LANGUAGES ── -->
           <div class="side-section">
             <div class="side-title">Languages</div>
             <div class="lang-row">
@@ -498,11 +473,27 @@
             </div>
           </div>
 
-          <!-- REFERENCES -->
+          <!-- TOOLS -->
           <div class="side-section">
-            <div class="side-title">References</div>
-            <div class="tag-item" style="border:none; font-style:italic; color:#94a3b8; font-size:0.85rem; padding:0;">
-              Available on request.
+            <div class="side-title">Tools &amp; Platforms</div>
+            <div class="tool-list">
+              <div class="tool-item"><i class="fas fa-check"></i> VS Code</div>
+              <div class="tool-item"><i class="fas fa-check"></i> Git &amp; GitHub</div>
+              <div class="tool-item"><i class="fas fa-check"></i> Figma</div>
+              <div class="tool-item"><i class="fas fa-check"></i> Postman</div>
+              <div class="tool-item"><i class="fas fa-check"></i> Linux / CLI</div>
+              <div class="tool-item"><i class="fas fa-check"></i> Render</div>
+            </div>
+          </div>
+
+          <!-- SOFT SKILLS -->
+          <div class="side-section">
+            <div class="side-title">Soft Skills</div>
+            <div class="tool-list">
+              <div class="tool-item"><i class="fas fa-check"></i> Problem Solving</div>
+              <div class="tool-item"><i class="fas fa-check"></i> Team Collaboration</div>
+              <div class="tool-item"><i class="fas fa-check"></i> Self-Motivated</div>
+              <div class="tool-item"><i class="fas fa-check"></i> Adaptability</div>
             </div>
           </div>
 
@@ -511,7 +502,7 @@
 
       <!-- FOOTER -->
       <div class="cv-footer">
-        <p>Awoke Derssie · CV · <span id="cv-year"></span></p>
+        <p>Awoke Derssie · Curriculum Vitae · <span id="cv-year"></span></p>
         <p>awokedersie@gmail.com · +251 939 013 630</p>
       </div>
 
