@@ -265,13 +265,14 @@ img {
 }
 
 .nav-link {
-  padding: 8px 16px;
+  padding: 8px 18px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border-radius: 8px;
   transition: var(--transition);
   position: relative;
   color: var(--text-color);
+  letter-spacing: 0.1px;
 }
 
 .nav-link::after {
