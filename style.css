@@ -30,7 +30,7 @@
 [data-theme="dark"] {
   --light-color: #0f172a;
   --dark-color: #f1f5f9;
-  --card-bg: #1e293b;
+  --card-bg: #162032;
   --text-color: #e2e8f0;
   --text-light: #94a3b8;
   --border-color: #334155;
@@ -644,6 +644,8 @@ img {
   position: relative;
   z-index: 1;
   width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 
 .about-image-decoration {
@@ -802,6 +804,12 @@ img {
   color: #fff;
   border-color: transparent;
   transform: translateY(-2px);
+}
+
+/* Projects CTA */
+.projects-cta {
+  text-align: center;
+  margin-top: 48px;
 }
 
 /* ============================================================
@@ -1400,7 +1408,7 @@ img {
   .hero-stats { gap: 16px; padding: 16px 20px; }
 
   .about-content { flex-direction: column; }
-  .experience-badge { left: 0; bottom: -20px; }
+  .experience-badge { left: 0; bottom: 16px; }
 
   .contact-content { flex-direction: column; }
   .contact-form { padding: 24px; }
@@ -1423,6 +1431,20 @@ img {
   .hero-btns { flex-direction: column; align-items: center; }
   .section-title { font-size: 1.8rem; }
   .hero-image-wrapper { width: 240px; height: 240px; }
-  .hero-stats { flex-wrap: wrap; justify-content: center; }
+  .hero-stats { flex-wrap: wrap; justify-content: center; gap: 12px; }
   .projects-grid { grid-template-columns: 1fr; }
+  .contact-form { padding: 16px; }
+  .experience-badge { left: 0; bottom: 16px; }
+}
+
+/* ============================================================
+   REDUCED MOTION — respect user accessibility preference
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-wrapper img { animation: none; }
+  .hero-image-ring { animation: none; }
+  .blob-1, .blob-2 { animation: none; }
+  .status-dot { animation: none; }
+  .typing-text::after, .typing-text-2::after { animation: none; }
+  * { transition-duration: 0.01ms !important; }
 }
