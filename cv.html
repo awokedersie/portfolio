@@ -404,7 +404,7 @@
                   <span class="tl-title">Lead Developer — DBU Clearance System</span>
                   <span class="tl-date">2023 – 2024</span>
                 </div>
-                <div class="tl-org">Debre Berhan University · Capstone Project</div>
+                <div class="tl-org">Debre Berhan University · Internship</div>
                 <ul class="tl-bullets">
                   <li>Led team to build a multi-department web clearance system.</li>
                   <li>Developed REST API with role-based access control.</li>
@@ -519,6 +519,9 @@
       const progressFill = document.getElementById('progressFill');
       const progressLabel = document.getElementById('progressLabel');
 
+      // Capture scroll position before generating
+      const scrollY = window.scrollY || window.pageYOffset;
+
       btn.classList.add('loading');
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating…';
       btn.disabled = true;
@@ -534,7 +537,15 @@
         margin: 0,
         filename: 'Awoke_Derssie_CV.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, letterRendering: true, backgroundColor: '#ffffff' },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          letterRendering: true,
+          backgroundColor: '#ffffff',
+          scrollX: 0,
+          scrollY: -scrollY,
+          windowWidth: document.getElementById('cv-document').scrollWidth
+        },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true },
         pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
       }).from(document.getElementById('cv-document')).save().then(() => {
